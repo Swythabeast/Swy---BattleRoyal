@@ -1,0 +1,14 @@
+name: BattleArena
+main: org.battleplugins.arena.BattleArena
+version: ${version}
+description: A complete match and event framework for Minecraft. Supports creating modes through config files, or fully custom modes through plugins.
+author: BattlePlugins
+website: https://battleplugins.org
+api-version: 1.19
+softdepend: [WorldEdit]
+commands:
+  battlearena:
+    description: The main BattleArena command.
+    usage: /<command> <subcommand> [args]
+    permission: battlearena.command
+    aliases: [ba]

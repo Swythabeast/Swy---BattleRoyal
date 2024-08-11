@@ -1,0 +1,41 @@
+# -----------------
+# Classes configuration for BattleArena
+#
+# Documentation: https://docs.battleplugins.org/books/user-guide/page/classes
+# Support: https://discord.gg/tMVPVJf
+# GitHub: https://github.com/BattlePlugins/BattleArena
+# -----------------
+config-version: 1.0 # The config version, do not change!
+
+# Whether players need specific permission nodes in order to
+# equip classes. If set to true, players will need the permission
+# battlearena.classes.equip.<class-name> to equip the class.
+require-permission: true
+
+# Configuration for classes
+classes:
+  warrior:
+    name: Warrior
+    items:
+      - iron_sword
+      - cooked_beef{amount=16}
+      - golden_apple{amount=2}
+    equipment:
+      helmet: iron_helmet
+      chestplate: iron_chestplate
+      leggings: iron_leggings
+      boots: iron_boots
+      offhand: shield
+  archer:
+    name: Archer
+    items:
+      - stone_sword
+      - bow
+      - cooked_beef{amount=16}
+      - golden_apple{amount=2}
+    equipment:
+      helmet: leather_helmet
+      chestplate: leather_chestplate
+      leggings: leather_leggings
+      boots: leather_boots
+      offhand: arrow{amount=32}
