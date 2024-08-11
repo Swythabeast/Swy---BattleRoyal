@@ -1,28 +1,30 @@
 # BattleArena
+Un cadre complet pour les matchs et événements dans Minecraft. Il prend en charge la création de modes via des fichiers de configuration ou des modes entièrement personnalisés via des plugins.
 
-A complete match and event framework for Minecraft. Supports creating modes through config files, or fully custom modes through plugins.
+## Modes par défaut
+Les jeux actifs dans BattleArena sont appelés des Compétitions. BattleArena prend en charge nativement deux types de compétitions :
 
-## Default Modes
-Active games in BattleArena are referred to as Competitions. BattleArena natively supports two competition types:
-- Match: A game that is started when a certain condition is met (i.e. number of players), or is always active. These games can be joined at any time, as long as there are available maps.
-- Event: A game that is started based on a certain interval, or when triggered by a server action. These games cannot be joined normally unless the event is active.
+## Match : 
+Un jeu qui commence lorsqu'une certaine condition est remplie (par exemple, un nombre de joueurs), ou qui est toujours actif. Ces jeux peuvent être rejoints à tout moment, tant qu'il y a des cartes disponibles.
 
-## Builtin Match Types
-- Arena: Simple duels mode that you fight with what is given to you in the config.
-- Skirmish: You bring in items you want to fight with. The game is always running, and you can join and leave at any time.
-- Colosseum: 4v4 team deathmatch. Last team standing wins.
-- Battlegrounds: 1 minute match in which the winner is the player with the most kills.
+## Événement : 
+Un jeu qui commence à intervalles réguliers ou lorsqu'il est déclenché par une action du serveur. Ces jeux ne peuvent pas être rejoints normalement sauf si l'événement est actif.
 
-## Builtin Event Types
-- Free for All: A free for all deathmatch that starts every 30 minutes. Last player alive wins.
-- Deathmatch: A 2-minute event where if you die you respawn. The player with the highest number of kills wins.
-- Tournament: Bracket tournament for any number of teams.
+### Types de Match intégrés
 
-## For Developers
-BattleArena is designed to be easily extendable. You can create your own modes, events, and even competitions. You can also create your own commands and listeners to handle events in your own way.
+Arène : Mode de duels simple où vous combattez avec ce qui vous est donné dans la configuration.
+Escarmouche : Vous apportez les objets avec lesquels vous souhaitez combattre. Le jeu est toujours en cours, et vous pouvez rejoindre et quitter à tout moment.
+Colisée : Combat à mort par équipe en 4 contre 4. L'équipe survivante gagne.
+Champs de bataille : Match d'une minute où le gagnant est le joueur avec le plus de kills.
+Types d'Événements intégrés
+Chacun pour soi : Combat à mort chacun pour soi qui commence toutes les 30 minutes. Le dernier joueur en vie gagne.
+Match à mort : Événement de 2 minutes où, si vous mourrez, vous réapparaissez. Le joueur avec le plus grand nombre de kills gagne.
+Tournoi : Tournoi à élimination directe pour un nombre quelconque d'équipes.
+Pour les développeurs
+BattleArena est conçu pour être facilement extensible. Vous pouvez créer vos propres modes, événements, et même compétitions. Vous pouvez également créer vos propres commandes et écouteurs pour gérer les événements à votre manière.
 
-### Creating an Arena
-In BattleArena, the root logic for a game is in the `Arena` class. This class is responsible for handling the game logic, and is the main class that is extended when creating a new mode. Most all aspects of BattleArena are event-driven, meaning that rather than implementing or overriding methods, you will be listening for various game events, or adding your own. Here is a simple example of an Arena class:
+Créer une Arène
+Dans BattleArena, la logique principale d'un jeu se trouve dans la classe Arena. Cette classe est responsable de la gestion de la logique du jeu et est la classe principale à étendre lors de la création d'un nouveau mode. La plupart des aspects de BattleArena sont basés sur des événements, ce qui signifie que plutôt que d'implémenter ou de remplacer des méthodes, vous écouterez divers événements du jeu ou ajouterez les vôtres. Voici un exemple simple d'une classe Arena :
 ```java
 public class MyArena extends Arena {
     
